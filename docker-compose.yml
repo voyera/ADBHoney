@@ -1,0 +1,11 @@
+version: "2.0"
+
+services:
+  adbhoney:
+    restart: always
+    build: .
+    ports:
+      - "5555:5555"
+    volumes:
+      # ADBHoney only keeps files, no log so far, unfortunately
+      - "/srv/cowrie/dl:/adb/data/"
