@@ -32,7 +32,7 @@ s.bind((TCP_IP, TCP_PORT))
 s.listen(1)
 
 def dump_file_data(addr, real_fname, data):
-    fname = "data-%s.raw" % hashlib.sha256(data).hexdigest()
+    fname = "./data/%s.raw" % hashlib.md5(data).hexdigest()
     with open(fname, "wb") as f:
         print "%s\t%s\tfile:%s - dumping %s bytes of data to %s..." % (int(time.time()), str(addr).ljust(24), real_fname, len(data), fname)
 	sys.stdout.flush()
